@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Label2.gd" type="Script" id=1]
+
+[node name="failiure" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 269.408
+margin_top = 171.827
+margin_right = 335.408
+margin_bottom = 185.827
+text = "You failed!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 262.541
+margin_top = 191.329
+margin_right = 348.541
+margin_bottom = 205.329
+text = "you collected"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

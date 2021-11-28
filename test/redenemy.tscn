@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://redsqar.png" type="Texture" id=1]
+[ext_resource path="res://redenemy.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 33.8682, 35.7837 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 36.4717, 6.13298 )
+
+[node name="enemy" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2.16792, 3.2635 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2.622, 2.54049 )
+scale = Vector2( 0.290801, 0.290801 )
+texture = ExtResource( 1 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 2.66519, 1.18495 )
+scale = Vector2( 3.20631, 3.20631 )
+process_parent = true
+physics_process_parent = true
+
+[node name="bnlonk" type="Area2D" parent="."]
+position = Vector2( 0.996887, -34.6947 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bnlonk"]
+position = Vector2( 0.62842, -5.4179 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="bnlonk" to="." method="_on_bnlonk_body_entered"]

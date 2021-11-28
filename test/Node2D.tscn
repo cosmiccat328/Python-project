@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Button.gd" type="Script" id=1]
+[ext_resource path="res://mainmenu.gd" type="Script" id=2]
+
+[node name="mainmenu" type="Node2D"]
+position = Vector2( 485, 311 )
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -17.2435
+margin_top = -44.5953
+margin_right = 22.7565
+margin_bottom = -30.5953
+text = "game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = -39.6347
+margin_top = 1.33484
+margin_right = 40.3653
+margin_bottom = 21.3348
+text = "play"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
